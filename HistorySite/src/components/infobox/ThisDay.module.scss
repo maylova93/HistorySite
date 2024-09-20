@@ -1,0 +1,70 @@
+@import '../../style/mixins.scss';
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: auto;
+  margin: 50px auto;
+  background-color: $color-black;
+  border-width: 20px;
+  border-style: solid;
+  color: $color-gold;
+  padding: 20px;
+
+  .info {
+    text-align: center;
+
+    h1 {
+      font-size: 90px;
+      color: $color-dark-tan;
+      font-family: 'Limelight', serif;
+    }
+
+    p {
+      font-size: 19px;
+      color: $color-dark-tan;
+      font-family: 'Linden Hill', serif;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .dateInput {
+      padding: 10px;
+      font-size: 1.2rem;
+      border: 2px solid $color-gold;
+      background-color: $color-black;
+      color: $color-gold;
+      width: 150px;
+      text-align: center;
+    }
+  }
+}
+
+/* Mobile version for screens 768px */
+@media (max-width: 768px) {
+  .infoBox {
+    width: 90%;
+    height: auto;
+    border-width: 15px;
+    padding: 0px;
+
+    .info {
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: 16px;
+        max-width: 100%;
+      }
+
+      .dateInput {
+        font-size: 1rem;
+        width: 120px;
+      }
+    }
+  }
+}

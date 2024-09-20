@@ -1,0 +1,168 @@
+@import '../../style/mixins.scss';
+
+.timeline {
+  position: relative;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  padding: 80px 0;
+  background-color: $color-black;
+  font-family: 'Linden Hill';
+  padding-bottom: 100px; /* Space for bottom arrow */
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #C7BD8D; /* Line color */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+/* Larger circle at the top */
+.topCircle {
+  width: 62px;
+  height: 62px;
+  background-color: #C7BD8D;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Smaller circles */
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: $color-black;
+  border: 3px solid #C7BD8D;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  z-index: 1;
+}
+
+/* Line connecting to the year and text */
+.line {
+  height: 2px;
+  width: 100px;
+  background-color: #C7BD8D;
+  position: absolute;
+  top: 10px;
+}
+
+/* Event to the left */
+.timelineEvent.left {
+  text-align: right;
+  padding-right: 60px;
+}
+
+.timelineEvent.left .circle {
+  right: -30px; /* Position circle to the left */
+}
+
+.timelineEvent.left .line {
+  right: calc(50% + 30px); /* Connect circle and text */
+}
+
+/* Event to the right */
+.timelineEvent.right {
+  text-align: left;
+  padding-left: 60px;
+}
+
+.timelineEvent.right .circle {
+  left: -30px; /* Position circle to the right */
+}
+
+.timelineEvent.right .line {
+  left: calc(50% + 30px); /* Connect circle and text */
+}
+
+/* Content styling */
+.content {
+  padding-top: 10px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #f5c518;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f5c518;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Date input styling */
+#dateInput {
+  background-color: #1c1c1c;
+  color: #f5c518;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button[type="submit"] {
+  background-color: #f5c518;
+  color: $color-black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: darken(#f5c518, 10%);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .timelineEvent {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .timelineEvent.left .circle,
+  .timelineEvent.right .circle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timelineEvent.left .line,
+  .timelineEvent.right .line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  #dateInput {
+    max-width: 100%;
+  }
+}

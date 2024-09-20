@@ -1,0 +1,46 @@
+@import '../../style/mixins.scss';
+
+.navbarStyle {
+  background-color: $color-black;
+  text-align: center;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0 90px; 
+    }
+  }
+
+  a {
+    font-family: 'Linden Hill';
+    color: $color-dark-tan;
+    text-decoration: none;
+    font-size: 20px;
+
+    &:hover {
+      color: $color-cream;
+      text-decoration: underline; 
+      transform: scale(1.05);
+    }
+  }
+
+  .activeNavLink {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      flex-direction: column;
+      align-items: center; // Ensure links are centered on mobile
+    }
+
+    li {
+      margin: 10px 0;
+    }
+  }
+}

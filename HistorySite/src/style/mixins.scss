@@ -1,0 +1,23 @@
+$color-cream: #FFE9BF;
+$color-beige: #D29E62;
+$color-gold: #695E48; 
+$color-dark-tan: #C7BD8D; 
+$color-black: #1F1F1F; 
+$color-dark-black: #151515;
+$color-light-gray: #F5F5F5; 
+
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Linden+Hill:ital@0;1&display=swap');
+
+/* Applying fonts */
+body {
+  font-family: 'Linden Hill', serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Limelight', serif;
+}
+

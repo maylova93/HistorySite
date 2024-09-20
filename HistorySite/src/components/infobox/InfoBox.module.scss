@@ -1,0 +1,57 @@
+@import '../../style/mixins.scss';
+
+.infoBox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  height: 350px;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: $color-black;
+
+
+  border-width: 20px;
+  border-style: solid;
+  color: $color-gold;
+
+  .info {
+    text-align: center; 
+
+    h1 {
+      font-size: 90px;
+      color: $color-dark-tan;
+      font-family: 'Limelight', serif;
+    }
+
+    p {
+      font-size: 19px;
+      color: $color-dark-tan;
+      font-family: 'Linden Hill', serif;
+      max-width: 800px; 
+    }
+  }
+}
+
+/* Mobile version for screens 768px  */
+@media (max-width: 768px) {
+  .infoBox {
+    width: 90%; 
+    height: auto; 
+    border-width: 15px; 
+    padding: 0px; 
+
+    .info {
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: 16px; 
+        max-width: 100%; 
+      }
+    }
+  }
+}
